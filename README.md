@@ -173,7 +173,7 @@ However, the absolute uncertainty values differ vastly between the two methods, 
 
 ![](media/image5.png)   
 *Figure 6: Preliminary! comparison of uncertainty estimation between HDN and HazeMatching*
-TODO: fix figure 6
+
 
 ### 2.4 Method comparison on real data
 On the real low-resolution microscopy data, we see the same overall patterns as in the synthetic experiments. UNet gives a stable single prediction, while HDN and HazeMatching do a better job at keeping continuous lines intact. The differences between the two generative models also carry over—HDN leans toward higher structural similarity, and HazeMatching produces reconstructions that look more perceptually convincing. In short, the results on real data are consistent with what we observed on the synthetic benchmarks.
