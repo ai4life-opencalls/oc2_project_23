@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://ai4life.eurobioimaging.eu/open-calls/">
+    <img src="https://github.com/ai4life-opencalls/.github/blob/main/AI4Life_banner_giraffe_nodes_OC.png?raw=true" width="70%">
+  </a>
+</p>
+
 # Project #23: Enhancing the effective resolution of intravital microscopy with digital expansion microscopy
 
 This page was created by the [AI4Life
@@ -50,7 +56,7 @@ National Center for Tumor Diseases, [University Hospital Heidelberg](https://www
 to develop a deep learning pipeline capable of enhancing low-resolution
 in-vivo images to resemble those of 4× physically expanded samples.
 
-Standard deep learning approaches, such as U-Net-based models (e.g.
+Standard deep learning approaches, such as UNet-based models (e.g.
 CARE), typically require precisely matched low- and high-resolution
 image pairs for training - something difficult to achieve in living
 tissue. To bypass this constraint, the team generated a synthetic
@@ -79,7 +85,7 @@ biological analysis.
 #### 2.1.1 CARE
 
 CARE (Content‑Aware Image Restoration) is a deep‑learning framework
-using a U‑Net style convolutional neural network trained on paired
+using a UNet style convolutional neural network trained on paired
 microscopy images - one of low quality (e.g., noisy, under-sampled) and
 one of high quality (e.g., high signal, fine resolution). Training pairs
 are obtained via interleaved acquisitions (e.g., low vs high laser
@@ -94,7 +100,7 @@ python, and also through
 [FIJI](https://imagej.net/plugins/care) and
 [KNIME](https://www.knime.com/).
 
-The researchers applied to the Open Call with an existing [CARE](https://csbdeep.bioimagecomputing.com/tools/care/) pipeline, training a U-Net like model on synthetic low-resolution / expanded high-resolution pairs, achieving good performance on pre-expansion data.
+The researchers applied to the Open Call with an existing [CARE](https://csbdeep.bioimagecomputing.com/tools/care/) pipeline, training a UNet like model on synthetic low-resolution / expanded high-resolution pairs, achieving good performance on pre-expansion data.
 
 Alongside CARE, we also evaluated newer generative approaches designed to provide both restoration and uncertainty estimation.
 
@@ -140,7 +146,7 @@ microscopy tasks.
 
 #### 2.1.4 Method comparison on validation dataset
 
-Overall, U-Net, HDN, and HazeMatching produce comparable qualitative reconstructions. HDN outputs tend to appear slightly blurrier, which is a result of the network's variational structure, but both HDN and HazeMatching show advantages in preserving fine details and maintaining line continuity compared to U-Net. Quantitatively, HDN achieves the highest structural similarity (SSIM), meaning it's better in matching global image structure, while HazeMatching performs best in scale-invariant PSNR (SI-PSNR) and LPIPS, showing better perceptual similarity to the reference images.
+Overall, UNet, HDN, and HazeMatching produce comparable qualitative reconstructions. HDN outputs tend to appear slightly blurrier, which is a result of the network's variational structure, but both HDN and HazeMatching show advantages in preserving fine details and maintaining line continuity compared to UNet. Quantitatively, HDN achieves the highest structural similarity (SSIM), meaning it's better in matching global image structure, while HazeMatching performs best in scale-invariant PSNR (SI-PSNR) and LPIPS, showing better perceptual similarity to the reference images.
 
 ![](media/image7.png)   
 *Figure 3: Comparison of the reconstruction results on the synthetic data*
@@ -149,12 +155,12 @@ Overall, U-Net, HDN, and HazeMatching produce comparable qualitative reconstruct
 |--------------|---------|-------|-------|
 | HazeMatching | **38.343**  | 0.759 | **0.339** |
 | HDN          | 37.771  | **0.858** | 0.373 |
-| U-Net        | 37.580  | 0.719 | 0.362 |
+| UNet        | 37.580  | 0.719 | 0.362 |         
 *Figure 4: Preliminary! metrics* 
 
 ### 2.2 Single prediction vs MMSE
 
-U-Net–based methods like CARE are deterministic: for each low-resolution input they always produce the same single output. This works well when the mapping from input to target is clear, but it gives no sense of alternative solutions when several reconstructions could fit the same data.
+UNet–based methods like CARE are deterministic: for each low-resolution input they always produce the same single output. This works well when the mapping from input to target is clear, but it gives no sense of alternative solutions when several reconstructions could fit the same data.
 
 Generative models such as HDN and HazeMatching take a different route. Built on probabilistic frameworks (VAEs or flow matching), they can generate multiple plausible predictions for the same input. This variability serves two purposes: it highlights areas of uncertainty, where the model is less constrained, and it captures diversity, showing that fine structures can be reconstructed in more than one valid way.
 
@@ -170,7 +176,7 @@ However, the absolute uncertainty values differ vastly between the two methods, 
 TODO: fix figure 6
 
 ### 2.4 Method comparison on real data
-On the real low-resolution microscopy data, we see the same overall patterns as in the synthetic experiments. U-Net gives a stable single prediction, while HDN and HazeMatching do a better job at keeping continuous lines intact. The differences between the two generative models also carry over—HDN leans toward higher structural similarity, and HazeMatching produces reconstructions that look more perceptually convincing. In short, the results on real data are consistent with what we observed on the synthetic benchmarks.
+On the real low-resolution microscopy data, we see the same overall patterns as in the synthetic experiments. UNet gives a stable single prediction, while HDN and HazeMatching do a better job at keeping continuous lines intact. The differences between the two generative models also carry over—HDN leans toward higher structural similarity, and HazeMatching produces reconstructions that look more perceptually convincing. In short, the results on real data are consistent with what we observed on the synthetic benchmarks.
 
 ![](media/image6.png)   
 *Figure 7: Method comparison on real low-resolution microscopy data*
@@ -206,7 +212,7 @@ fidelity and realism." arXiv preprint arXiv:2506.22397 (2025).
 
 ### 5.2 Referenced software
 
-1\. [CSBDeep](https://github.com/CSBDeep/CSBDeep) -- a
+1\. [CSBDeep](https://github.com/CSBDeep/CSBDeep) - a
 toolbox for CARE
 
 2\. [Careamics](https://github.com/CAREamics/careamics) -
